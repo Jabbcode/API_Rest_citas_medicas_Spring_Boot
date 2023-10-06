@@ -37,7 +37,7 @@ public class DiagnosticoController {
     @PostMapping
     public ResponseEntity<Diagnostico> createDiagnosticoController(@RequestBody Diagnostico diagnostico) {
         try {
-            Diagnostico newDiagnostico = diagnosticoService.createDiagnosticoService(diagnostico);
+            Diagnostico newDiagnostico = diagnosticoService.createDiagnosticoWithCitaService(diagnostico);
             return ResponseEntity.status(HttpStatus.CREATED).body(newDiagnostico);
         } catch (CitaNotFoundException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

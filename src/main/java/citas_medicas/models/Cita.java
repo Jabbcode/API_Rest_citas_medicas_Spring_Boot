@@ -1,5 +1,6 @@
 package citas_medicas.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class Cita {
     @JoinColumn(name = "id_diagnostico")  // Esta es la parte clave
     private Diagnostico diagnostico;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_medico")
     private Medico medico;

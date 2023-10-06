@@ -21,7 +21,7 @@ public class DiagnosticoService {
     public List<Diagnostico> getAllDiagnosticosService() { return diagnosticoRepository.findAll();}
     public Diagnostico getOneDiagnosticoService(Long id) {return diagnosticoRepository.findById(id).orElse(null);}
 
-    public Diagnostico createDiagnosticoService(Diagnostico diagnostico) {
+    public Diagnostico createDiagnosticoWithCitaService(Diagnostico diagnostico) {
         Long citaId = diagnostico.getCita().getId();
         Optional<Cita> optionalCita = citaRepository.findById(citaId);
 
