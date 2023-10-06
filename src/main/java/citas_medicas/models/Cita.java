@@ -29,4 +29,8 @@ public class Cita {
     @OneToOne(mappedBy = "cita", cascade = CascadeType.ALL)
     @JoinColumn(name = "id_diagnostico")  // Esta es la parte clave
     private Diagnostico diagnostico;
+
+    @ManyToOne
+    @JoinColumn(name = "id_medico")
+    private Medico medico;
 }
