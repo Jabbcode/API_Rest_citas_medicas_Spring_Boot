@@ -23,7 +23,7 @@ public class Diagnostico {
     @Column(name = "enfermedad")
     private String enfermedad;
 
-    @JsonBackReference
+    @JsonBackReference(value = "citaReference")
     @OneToOne
     @JoinColumn(name = "id_cita")  // Esta es la parte clave
     private Cita cita;

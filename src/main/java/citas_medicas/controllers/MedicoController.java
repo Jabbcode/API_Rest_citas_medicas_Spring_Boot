@@ -1,7 +1,6 @@
 package citas_medicas.controllers;
 
 import citas_medicas.exceptions.CitaNotFoundException;
-import citas_medicas.models.Diagnostico;
 import citas_medicas.models.Medico;
 import citas_medicas.services.MedicoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import java.util.List;
 public class MedicoController {
 
     @Autowired
-    MedicoService medicoService;
+    private MedicoService medicoService;
 
     @GetMapping
     public ResponseEntity<List<Medico>> getAllMedicoController() {

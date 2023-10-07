@@ -31,8 +31,13 @@ public class Cita {
     @JoinColumn(name = "id_diagnostico")  // Esta es la parte clave
     private Diagnostico diagnostico;
 
-    @JsonBackReference
+    @JsonBackReference(value = "medicoReference")
     @ManyToOne
     @JoinColumn(name = "id_medico")
     private Medico medico;
+
+    @JsonBackReference(value = "pacienteReference")
+    @ManyToOne
+    @JoinColumn(name = "id_paciente")
+    private Paciente paciente;
 }

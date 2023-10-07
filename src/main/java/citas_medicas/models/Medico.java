@@ -22,7 +22,7 @@ public class Medico {
     @Column(name = "num_colegiado")
     private String num_colegiado;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "medicoReference")
     @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL)
     private List<Cita> citas;
 }
