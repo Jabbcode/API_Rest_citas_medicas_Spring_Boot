@@ -1,25 +1,24 @@
 package citas_medicas.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "usuarios")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    @Column(name = "nombre")
-    private String nombre;
-
-    @Column(name = "apellido")
-    private String apellido;
-
-    @Column(name = "usuario")
-    private String usuario;
-
-    @Column(name = "clave")
-    private String clave;
-
+    protected String nombre;
+    protected String apellido;
+    protected String username;
+    protected String clave;
 }

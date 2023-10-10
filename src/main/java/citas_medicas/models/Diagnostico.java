@@ -6,10 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Table(name = "diagnosticos")
 public class Diagnostico {
 
@@ -23,8 +23,8 @@ public class Diagnostico {
     @Column(name = "enfermedad")
     private String enfermedad;
 
-    @JsonBackReference(value = "citaReference")
+    @JsonBackReference
     @OneToOne
-    @JoinColumn(name = "id_cita")  // Esta es la parte clave
+    @JoinColumn(name = "id_cita")
     private Cita cita;
 }

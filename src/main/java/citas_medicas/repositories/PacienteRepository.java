@@ -4,4 +4,5 @@ import citas_medicas.models.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PacienteRepository extends JpaRepository<Paciente, Long> {
+    // Agrega métodos específicos para Paciente si los necesitas
 }
